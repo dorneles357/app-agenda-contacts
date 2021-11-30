@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "Ebenézer Dorneles",
   "license": "ISC",
@@ -13,7 +15,9 @@
     "consign": "^0.1.6",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "method-override": "^2.3.10",
+    "method-override": "^2.3.10"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }

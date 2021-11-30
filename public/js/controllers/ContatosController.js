@@ -1,10 +1,22 @@
-angular.module("server_4").controller("ContatosController", function ($scope) {
-  $scope.contatos = [
-    { id: 1, nome: "Goku", email: "goku@mail.com" },
-    { id: 2, nome: "naruto", email: "naruto@gmail.com" },
-    { id: 3, nome: "hantaro", email: "hantaro@gmail.com" },
-    { id: 4, nome: "saitama", email: "saitama@gmail.com" },
-  ];
+angular
+  .module("server_4")
+  .controller("ContatosController", function ($scope, $resource) {
+    $scope.contatos = [];
 
-  $scope.filtro = "";
-});
+    $scope.filtro = "";
+
+    var Contato = $resource('/contatos');
+
+    function buscaContatos(){
+      Contato.query(
+        function(contatos){
+          $scope.contatos = contatos;
+        },
+        function(erro){
+          console.log(`Não foi possivel obter a lista de contatos!`);
+          console.log(erro);
+        }
+      );
+    }
+    buscaContatos();
+  });
