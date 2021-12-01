@@ -1,10 +1,11 @@
-var contatos = [];
+const contatos = [
+  {id: "1", "nome": "Goku", "email": "goku@gmail.com"}
+];
 module.exports = () => {
   const controller = {};
   (controller.listaContatos = (req, res) => {
     res.json(contatos);
   }),
-
     (controller.obtemContato = (req, res) => {
       var idContato = req.params.id;
       var contato = contatos.filter((contato) => {
@@ -15,12 +16,10 @@ module.exports = () => {
         ? res.json(contato)
         : res.status(404).send("Contato não encontrado");
     }),
-
-
-    (controller.removeContato = function(req, res){
+    (controller.removeContato = function (req, res) {
       var idContato = req.params.id;
 
-      contatos = conatatos.filter(function(contato){
+      contatos = contatos.filter(function (contato) {
         return contato._id != idContato;
       });
       res.send(204).end();
