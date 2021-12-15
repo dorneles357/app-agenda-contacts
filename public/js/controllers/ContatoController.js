@@ -1,5 +1,18 @@
 angular
   .module("server_4")
-  .controller("ContatoController", function ($scope, $routeParams) {
-    console.log($routeParams.contatoID);
+  .controller("ContatoController", function ($scope, $routeParams, $resource) {
+    
+    var Contato = $resource('contatos/:id');
+
+    Contato.get({id: $routeParams.contatoID},
+      function(contato){
+        $scope.contato = contato;
+      },
+      function(erro){
+        $scope.mensagem = {
+          texto: "Não foi possivel obter contato"
+        };
+        console.log(erro);
+      }
+    );
   });
