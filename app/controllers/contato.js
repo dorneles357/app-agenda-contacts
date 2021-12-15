@@ -1,6 +1,6 @@
 const contatos = [
-  { id: "1", nome: "Goku", email: "goku@gmail.com" },
-  { id: "1", nome: "Hantaro", email: "hantaro@gmail.com" },
+  { _id: "1", nome: "Goku", email: "goku@gmail.com" },
+  { _id: "2", nome: "Hantaro", email: "hantaro@gmail.com" },
 ];
 module.exports = () => {
   const controller = {};
