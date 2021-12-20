@@ -1,8 +1,6 @@
 angular
   .module("server_4")
-  .controller("ContatoController", function ($scope, $routeParams, $resource) {
-    
-    var Contato = $resource('contatos/:id');
+  .controller("ContatoController", function ($scope, $routeParams, Contato) {
 
     if($routeParams.contatoID){
       Contato.get({id: $routeParams.contatoID},

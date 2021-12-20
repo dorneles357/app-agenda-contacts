@@ -1,13 +1,12 @@
 angular
   .module("server_4")
-  .controller("ContatosController", function ($scope, $resource) {
+  .controller("ContatosController", function ($scope, Contato) {
     $scope.contatos = [];
 
     $scope.filtro = "";
 
     $scope.mensagem = { texto: "" };
 
-    var Contato = $resource("/contatos/:id");
 
     function buscaContatos() {
       Contato.query(
