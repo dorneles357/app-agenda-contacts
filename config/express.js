@@ -6,7 +6,7 @@ module.exports = function () {
   const app = express();
 
   //middleware config ambiente
-  app.set("port", 3000);
+  app.set("port", 8080);
 
   //middleware
   app.use(express.static("./public"));
