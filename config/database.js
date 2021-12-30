@@ -17,6 +17,7 @@ module.exports = (uri) =>{
 	//close connection
 	process.on('SIGINT', ()=>{
 		mongoose.connection.close(()=>{
+			console.clear();
 			console.log(`Disconnected application ...`);
 
 			process.exit(0);
