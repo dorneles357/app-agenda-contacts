@@ -31,4 +31,8 @@ angular
           $scope.mensagem = {texto: 'Não foi possível salvar!'}
         })
     }
+
+    Contato.query((contatos)=>{
+      $scope.contatos = contatos;
+    });
   });
