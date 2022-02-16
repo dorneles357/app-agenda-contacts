@@ -3,7 +3,7 @@ module.exports = (app) =>{
 	const controller ={};
 
 	controller.listaContatos = (req, res)=>{
-		const promise = Contato.find().exec()
+		const promise = Contato.find().populate('emergencia').exec()
 			.then(
 				(contatos) =>{
 					res.json(contatos);
