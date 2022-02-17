@@ -1,6 +1,7 @@
 require('dotenv/config');
 const http = require('http');
 const app = require('./config/express')();
+require('./config/passport')();
 require('./config/database.js')(process.env.DB_DEV);
 
 

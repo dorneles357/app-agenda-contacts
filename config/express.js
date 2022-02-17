@@ -17,11 +17,6 @@ module.exports = function () {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
   app.use(require("method-override")());
-
-  //middleware template engine
-  app.set("view engine", "ejs");
-  app.set("views", "./app/views");
-
   app.use(cookieParser());
   app.use(session(
     {
@@ -33,9 +28,14 @@ module.exports = function () {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  //middleware template engine
+  app.set("view engine", "ejs");
+  app.set("views", "./app/views");
+
   consign({ cwd: "app" })
     .then("models")
     .then("controllers")
+    .then("routes/auth.js")
     .then("routes")
     .into(app);
 
