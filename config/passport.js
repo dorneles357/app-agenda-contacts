@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const passport = require('passport');
-const usuario = require('../app/models/usuario');
 const GitHubStrategy = require('passport-github').Strategy;
 
 module.exports = () =>{
