@@ -6,12 +6,8 @@ module.exports = (app)=>{
             successRedirect:'/'
         }));
 
-    app.get('/', (req, res, next)=>{
-            if(req.isAuthenticated()){
-
-                return next();
-            } else {
-                res.render('auth');
-            }
-        });
+        app.get('/logout', function(req, res) {
+            req.logOut(); // exposto pelo passport
+            res.redirect('/');
+          });
 }

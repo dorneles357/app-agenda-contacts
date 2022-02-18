@@ -1,3 +1,4 @@
+var findOrCreate = require('mongoose-findorcreate');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
